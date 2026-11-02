@@ -1,6 +1,6 @@
 interface SocialCardProps {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   icon: React.ReactNode;
   link?: string;
 }
