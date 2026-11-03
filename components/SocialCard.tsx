@@ -1,11 +1,9 @@
 interface SocialCardProps {
-  title?: string;
-  description?: string;
   icon: React.ReactNode;
   link?: string;
 }
 
-export default function SocialCard({ title, description, icon, link }: SocialCardProps) {
+export default function SocialCard({icon, link }: SocialCardProps) {
   return (
     <div className="p-4 border-l-4 border-blue-600 bg-gray-50 rounded flex items-center gap-4">
       <div>
