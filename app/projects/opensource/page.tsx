@@ -1,3 +1,5 @@
+import ProjectsFromApi from '@/components/ProjectsFromApi';
+
 export default function OpenSourceProjectsPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-12">
@@ -5,6 +7,7 @@ export default function OpenSourceProjectsPage() {
       <p className="text-lg text-gray-700">
         Projects I have built and shared with the open-source community.
       </p>
+      <ProjectsFromApi type="opensource" />
     </main>
   );
 }

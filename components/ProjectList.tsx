@@ -1,21 +1,21 @@
 import ProjectCard from './ProjectCard';
+import type { Project } from '@/lib/projects-db';
 
-interface Project {
-  title: string;
-  description: string;
-  technologies: string[];
-  link?: string;
-}
+type ProjectListItem = Pick<
+  Project,
+  'title' | 'description' | 'technologies' | 'link'
+> &
+  Partial<Pick<Project, 'id' | 'type'>>;
 
 interface ProjectListProps {
-  projects: Project[];
+  projects: ProjectListItem[];
 }
 
 export default function ProjectList({ projects }: ProjectListProps) {
   return (
     <section className="grid gap-4 md:grid-cols-2">
       {projects.map((project) => (
-        <ProjectCard key={project.title} {...project} />
+        <ProjectCard key={project.id ?? project.title} {...project} />
       ))}
     </section>
   );
